@@ -120,6 +120,14 @@ left: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.pyramid-nameUser{
+  padding: 0 10px;
+    background-color: blue;
+    border-radius: 5px;
+    margin: 0 5px;
 }
 
 .MoneyList{

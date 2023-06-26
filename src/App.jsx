@@ -5,9 +5,15 @@ import Start from "./components/Start";
 import "./App.css";
 
 const App = () => {
+
+
+// participant
   const [userName, setUserName] = useState(null);
+
   const [questionNumber, setQuestionNumber] = useState(1);
+
   const [stop, setStop] = useState(false);
+  
   const [earned, setEarned] = useState("$ 0");
 
   const data = [
@@ -395,8 +401,9 @@ const App = () => {
               </>
             )}
           </div>
-          <span style={{textAlign:"center" , display:"flex" , width:"100px"}}> Participant :{userName}</span>
+          
           <div className="pyramid">
+          <div>  Participant :<span className="pyramid-nameUser">{userName}</span></div>
             <ul className="MoneyList">
               {Amont.map((v) => {
                 return (
