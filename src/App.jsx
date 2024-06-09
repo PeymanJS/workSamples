@@ -7,13 +7,13 @@ import "./App.css";
 const App = () => {
 
 
-// participant
+  // participant
   const [userName, setUserName] = useState(null);
 
   const [questionNumber, setQuestionNumber] = useState(1);
 
   const [stop, setStop] = useState(false);
-  
+
   const [earned, setEarned] = useState("$ 0");
 
   const data = [
@@ -374,7 +374,25 @@ const App = () => {
   useEffect(() => {
     questionNumber > 1 &&
       setEarned(Amont.find((m) => m.id === questionNumber - 1).amont);
+    console.log(questionNumber)
+
   }, [Amont, questionNumber]);
+
+  const AgainPlay = () => {
+    if (questionNumber >= 5 && questionNumber <= 9) {
+      setQuestionNumber(5)
+      setStop(false)
+    }
+    else if (questionNumber >= 10 && questionNumber <= 18) {
+      setQuestionNumber(10)
+      return setStop(false)
+    }
+    else {
+      setQuestionNumber(1)
+      setStop(false)
+    }
+
+  }
 
   return (
     <div className="app">
@@ -382,7 +400,11 @@ const App = () => {
         <>
           <div className="main">
             {stop ? (
-              <h1 className="endText">Your Earned is{earned} </h1>
+              <>
+                <h1 className="endText">Your Earned is{earned}</h1>
+                <button className="again" onClick={() => { AgainPlay() }}>Do you again play ?</button>
+              </>
+
             ) : (
               <>
                 <div className="top">
@@ -401,9 +423,9 @@ const App = () => {
               </>
             )}
           </div>
-          
+
           <div className="pyramid">
-          <div>  Participant :<span className="pyramid-nameUser">{userName}</span></div>
+            <div>  Participant :<span className="pyramid-nameUser">{userName}</span></div>
             <ul className="MoneyList">
               {Amont.map((v) => {
                 return (

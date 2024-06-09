@@ -169,6 +169,19 @@ left: 80px;
   margin: auto;
 }
 
+.again{
+  position: relative;
+  top: -40%;
+  margin: 0 auto;
+  width: 50%;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
 .Start{
   width: 250px;
   height: 100px;
