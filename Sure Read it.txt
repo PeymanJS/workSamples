@@ -1,0 +1,6 @@
+To execute this project first write the command in terminal of vs code editor:
+
+ npm install
+
+Note: If didn't recognize NPM by the editor, install node.js
+
